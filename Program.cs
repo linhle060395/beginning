@@ -7,8 +7,8 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            int zahl1 = 520;
-            int zahl2 = 100;
+            int zahl1 = 600;
+            int zahl2 = 200;
 
             int ergebnis1 = zahl1 + zahl2;
             Console.WriteLine(ergebnis1);
@@ -27,9 +27,15 @@ namespace HelloWorld
 
             zahl1++;
             Console.WriteLine(zahl1);
+
             zahl2--;
-            zahl1 += 10; //zahl1 = zahl1 + 10;
+            Console.WriteLine(zahl2);
+
+            zahl1 *= 2; //zahl1 = zahl1 * 2;
             Console.WriteLine(zahl1);
+
+            zahl2 += 25; //zahl2 = zahl2 + 25;
+            Console.WriteLine(zahl2);
         }
 
     }
