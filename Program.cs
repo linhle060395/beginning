@@ -7,55 +7,29 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            CultureInfo cu = new CultureInfo("en-us");
-            CultureInfo.CurrentCulture = cu;
+            int zahl1 = 520;
+            int zahl2 = 100;
 
-            string text = "Das ist ein Text";
-            Console.WriteLine(text);
+            int ergebnis1 = zahl1 + zahl2;
+            Console.WriteLine(ergebnis1);
 
-            int zahl = 21;
-            Console.WriteLine(zahl);
+            int ergebnis2 = zahl1 - zahl2;
+            Console.WriteLine(ergebnis2);
 
-            double kommazahl = 21.3;
-            Console.WriteLine(kommazahl);
+            int ergebnis3 = zahl1 * zahl2;
+            Console.WriteLine(ergebnis3);
 
-            float weiterFliesKommazahl = 26.33456516623f;
-            Console.WriteLine(weiterFliesKommazahl);
+            int ergebnis4 = zahl1 / zahl2;
+            Console.WriteLine(ergebnis4);
 
-            decimal flieskomma = 26.5M;
-            Console.WriteLine(flieskomma);
+            int ergebnis5 = zahl1 % zahl2;
+            Console.WriteLine(ergebnis5);
 
-            bool wahrheitswert = true;
-            Console.WriteLine(wahrheitswert);
-            bool anders = false;
-            Console.WriteLine(anders);
-
-            char buchstabe = 'A';
-            char buschstabe = (char)48;
-            Console.WriteLine(buchstabe);
-
-            long langezahl = 123456789123456789;
-            Console.WriteLine(langezahl);
-
-            uint positiveZahlen = 123;
-            Console.WriteLine(positiveZahlen);
-
-
-            string [] myArray = new string [10];
-            myArray[0] = "ersten Wert";
-            myArray [9] = "letzter Wert";
-            Console.WriteLine(myArray);
-
-            List<string> myList = new List<string>();
-            
-
-            myList.Add("Linh");
-            myList.Add("Weikersheim");
-            myList.Add("Ismaning");
-
-            Console.WriteLine(myList[0]);
-            Console.WriteLine(myList[1]);
-            Console.WriteLine(myList[2]);
+            zahl1++;
+            Console.WriteLine(zahl1);
+            zahl2--;
+            zahl1 += 10; //zahl1 = zahl1 + 10;
+            Console.WriteLine(zahl1);
         }
 
     }
