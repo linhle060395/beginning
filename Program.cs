@@ -6,23 +6,30 @@ namespace HelloWorld
     class Program
     {
         static void Main(string[] args)
+
+        //Frage den Nutzer bis zu welcher Zahl aufsummiert werden soll
+
+
+        //Mache das in allen möglichen Schleifenarten
+        //In welcher geht es nicht und wieso?
+            //for, foreach, while, do while
         {
             List<int> myNumberList = new List<int>();
+            int user_zahl = 0;
             
-            Console.WriteLine("Sage mir wie viele Zahlen du in deine Liste hinzugügen möchtest");
-            int amountNumbers = Convert.ToInt32(Console.ReadLine());
-
-            while(myNumberList.Count < amountNumbers)
+            do
             {
+                //code block
                 Console.WriteLine("Gebe mir eine Zahl");
-                myNumberList.Add(Convert.ToInt32(Console.ReadLine()));
-            }
+                user_zahl = Convert.ToInt32(Console.ReadLine());
+                myNumberList.Add(user_zahl);
+            } while(user_zahl > 0);
 
             //Summiere alle zahlen auf
             int ergebnis = 0;
             foreach(int zahl in myNumberList)
             {
-                ergebnis += zahl;
+                ergebnis = ergebnis + zahl;
             }
             Console.WriteLine($"Das Ergebnis ist {ergebnis}");
       
