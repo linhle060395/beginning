@@ -7,18 +7,24 @@ namespace HelloWorld
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Gebe mir ein Zahl");
-            int zahl = Convert.ToInt16(Console.ReadLine());
-
-            for(int i=0; i<=zahl; i++)
+             static void Main(string[] args)
             {
-                if(i%2==0&&i!=0)
+               
+               Console.WriteLine("Give me your name");
+               string name = Console.ReadLine();
+
+                for(int i = 0; i<10; i++);
                 {
-                    Console.WriteLine(i);
+                    if(name.Contains("e"))
+                    {
+                       Console.WriteLine(name);
+                    }
+                    else
+                    {
+                        Console.WriteLine(" ");
+                    }
                 }
+                 }
+
             }
-        }
     }
-}
