@@ -13,9 +13,9 @@ namespace HelloWorld
             Console.WriteLine("Enter a text");
             string text = Console.ReadLine();
 
-            string uppertext = text.ToUpper();
+            int length = text.Length;
 
-            Console.WriteLine($"{uppertext}");
+            Console.WriteLine($"The length of the text is {length}");
         }
     }
 }
