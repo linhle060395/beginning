@@ -9,13 +9,11 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Gebe mir ein Zahl");
-            int Zahl = Convert.ToInt16(Console.ReadLine());
+            string myText = "uuuuuUUUgGGhfdkajfwGGUU";
+            string myText2 = myText.Replace("U", "G");
+            myText2 = myText.Replace("u", "g");
 
-            for(int i = 0; i <= Zahl; i++)
-            {
-                Console.WriteLine(i);
-            }            
+            Console.WriteLine(myText2);   
         }
     }
 }
