@@ -13,9 +13,9 @@ namespace HelloWorld
             Console.WriteLine("Enter a text");
             string text = Console.ReadLine();
 
-            int length = text.Length;
+            int countOfLetterA = text.Count(c => c == 'a' || c == 'A');
 
-            Console.WriteLine($"The length of the text is {length}");
+        Console.WriteLine($"The letter 'a' occurs {countOfLetterA} times in the text.");
         }
     }
 }
