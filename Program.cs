@@ -13,14 +13,15 @@ namespace HelloWorld
             Console.WriteLine("Enter a text");
             string text = Console.ReadLine();
 
-             if (text.Length >= 8)
+            // Split the input using semicolon as the delimiter
+        string[] values = text.Split(';');
+
+        Console.WriteLine("Individual values:");
+
+        // Output each individual value
+        foreach (string value in values)
         {
-            string extractedSubstring = text.Substring(2, 5);
-            Console.WriteLine($"Extracted Substring: {extractedSubstring}");
-        }
-        else
-        {
-            Console.WriteLine("The input text is too short. Please enter at least 8 characters.");
+            Console.WriteLine(value.Trim()); // Trim to remove leading/trailing spaces
         }
         }
     }
