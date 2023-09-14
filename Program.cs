@@ -2,29 +2,36 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using Microsoft.VisualBasic;
 
 namespace HelloWorld
 {
     class Program
     {
-             static void Main(string[] args)
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Give me a number");
+            int number = Convert.ToInt16(Console.ReadLine());
+
+            for(int i=1; i<number; i++)
             {
-               
-               Console.WriteLine("Give me your name");
-               string name = Console.ReadLine();
-
-                for(int i = 0; i<10; i++);
+                if(i%3 == 0)
                 {
-                    if(name.Contains("e"))
-                    {
-                       Console.WriteLine(name);
-                    }
-                    else
-                    {
-                        Console.WriteLine(" ");
-                    }
+                    Console.WriteLine("Fizz");
                 }
-                 }
-
+                else if(i%5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else if(i%3 == 0 && i%5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
             }
+        }
     }
+}
