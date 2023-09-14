@@ -10,18 +10,20 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a text");
-            string text = Console.ReadLine();
+            Console.WriteLine("Enter a number: ");
+            int number = Convert.ToInt32(Console.ReadLine());
 
-            // Split the input using semicolon as the delimiter
-        string[] values = text.Split(';');
-
-        Console.WriteLine("Individual values:");
-
-        // Output each individual value
-        foreach (string value in values)
+        if (number >= 0)
         {
-            Console.WriteLine(value.Trim()); // Trim to remove leading/trailing spaces
+            Console.WriteLine($"Counting down from {number} to 0:");
+            for (int i = number; i >= 0; i--)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Please enter a non-negative number.");
         }
         }
     }
