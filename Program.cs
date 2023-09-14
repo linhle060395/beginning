@@ -9,14 +9,11 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string text = "hellothere";
-            int desiredLength = 20;
-
-            int yCount = desiredLength - text.Length;
-            string yString = new string ('y', yCount);
-
-            string result = yString + text;
-            Console.WriteLine(result);
+            Console.WriteLine("Geb mir einen Text");
+            string eingabe = Console.ReadLine();
+            string str = "abc";
+        
+            Console.WriteLine(eingabe.Contains(str));
         }
     }
 }
