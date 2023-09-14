@@ -10,20 +10,12 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number");
-            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter a text");
+            string text = Console.ReadLine();
 
-            int factorial = CalculateFactorial(number);
+            string uppertext = text.ToUpper();
 
-            Console.WriteLine($"The factorial of {number} ist {factorial}");
-        }
-
-        static int CalculateFactorial(int n)
-        {
-            if(n == 0)
-                return 1;
-            else    
-                return n * CalculateFactorial(n - 1);
+            Console.WriteLine($"{uppertext}");
         }
     }
 }
