@@ -13,7 +13,7 @@ namespace HelloWorld
             Console.WriteLine("Give me a number");
             int number = Convert.ToInt16(Console.ReadLine());
 
-            for(int i=1; i<number; i++)
+            for(int i=1; i<=number; i++)
             {
                 if(i%3 == 0)
                 {
