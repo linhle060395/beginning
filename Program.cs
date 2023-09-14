@@ -7,11 +7,16 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            int nummer1 = 25;
-            int nummer2 = 36;
+            Console.WriteLine("Gebe mir der ersten Nummer");
+            string Eingabe1 = Console.ReadLine();
 
-            int ergebnis = nummer1 + nummer2;
-            Console.WriteLine(ergebnis);
+            Console.WriteLine("Gebe mir der zweiten Nummer");
+            string Eingabe2 = Console.ReadLine();
+
+            int Nummer1 = Convert.ToInt16(Eingabe1);
+            int Nummer2 = Convert.ToInt16(Eingabe2);
+            int Ergebnis = Nummer1 + Nummer2;
+            Console.WriteLine("Die Summe von 2 Nummer ist " + Ergebnis);
         }
     }
 }
