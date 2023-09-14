@@ -13,9 +13,15 @@ namespace HelloWorld
             Console.WriteLine("Enter a text");
             string text = Console.ReadLine();
 
-            int countOfLetterA = text.Count(c => c == 'a' || c == 'A');
-
-        Console.WriteLine($"The letter 'a' occurs {countOfLetterA} times in the text.");
+             if (text.Length >= 8)
+        {
+            string extractedSubstring = text.Substring(2, 5);
+            Console.WriteLine($"Extracted Substring: {extractedSubstring}");
+        }
+        else
+        {
+            Console.WriteLine("The input text is too short. Please enter at least 8 characters.");
+        }
         }
     }
 }
