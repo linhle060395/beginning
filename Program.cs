@@ -9,11 +9,14 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string myText = "uuuuuUUUgGGhfdkajfwGGUU";
-            string myText2 = myText.Replace("U", "G");
-            myText2 = myText.Replace("u", "g");
+            string text = "hellothere";
+            int desiredLength = 20;
 
-            Console.WriteLine(myText2);   
+            int yCount = desiredLength - text.Length;
+            string yString = new string ('y', yCount);
+
+            string result = yString + text;
+            Console.WriteLine(result);
         }
     }
 }
