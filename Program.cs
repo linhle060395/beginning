@@ -18,25 +18,18 @@ namespace HelloWorld
             int NumbertoGuess = random.Next(0, 101);
             Console.WriteLine($"The Number to Guess is {NumbertoGuess}");
 
-           while(number != NumbertoGuess )
-            {
-                Console.WriteLine("You have another chance");
-                if(number < NumbertoGuess)
-                {
-                    Console.WriteLine("The Number to Guess is larger than your number");
-                
-                }
-                else
-                {
-                    Console.WriteLine("The Number to Guess is smaller than your number");
-                }
-                number = Convert.ToInt32(Console.ReadLine());
-            }
-            if(number == NumbertoGuess)
-            {
+           if(number == NumbertoGuess)
+           {
                 Console.WriteLine("You win!");
-            }
-            
+           }
+           else if(number < NumbertoGuess)
+           {
+                Console.WriteLine("The Number to Guess is larger than your number");
+           }
+           else
+           {
+                Console.WriteLine("The Number to Guess is smaller than your number");
+           }     
         }
     }
 }
