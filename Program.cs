@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Xml.XPath;
 using Microsoft.VisualBasic;
 
 namespace HelloWorld
@@ -11,25 +12,22 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Give me a number between 0 and 100");
-            int number = Convert.ToInt32(Console.ReadLine());
+           Console.WriteLine("How many texts do you want in an array?");
+           int number = Convert.ToInt16(Console.ReadLine());
 
-            Random random = new Random();
-            int NumbertoGuess = random.Next(0, 101);
-            Console.WriteLine($"The Number to Guess is {NumbertoGuess}");
+           string[] theArray = new string[number];
 
-           if(number == NumbertoGuess)
+           for(int i=0; i < number; i++)
            {
-                Console.WriteLine("You win!");
+                string text1 = Console.ReadLine();
+                theArray[i] = text1;
            }
-           else if(number < NumbertoGuess)
+
+           foreach(string entry in theArray)
            {
-                Console.WriteLine("The Number to Guess is larger than your number");
+                Console.WriteLine(entry.PadLeft(20,' '));
            }
-           else
-           {
-                Console.WriteLine("The Number to Guess is smaller than your number");
-           }     
+           
         }
     }
 }
