@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using Microsoft.VisualBasic;
 
@@ -10,21 +11,37 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
-
-        if (number >= 0)
-        {
-            Console.WriteLine($"Counting down from {number} to 0:");
-            for (int i = number; i >= 0; i--)
+            string operators = " ";
+            do
             {
-                Console.WriteLine(i);
+                Console.WriteLine("Gebe mir ein Rechenzeichen (+,-,*,/)");
+                operators = Console.ReadLine();
             }
-        }
-        else
-        {
-            Console.WriteLine("Please enter a non-negative number.");
-        }
+            while(operators != "+" && operators != "-" && operators != "*" && operators != "/");
+
+            Console.WriteLine("Geschafft");
+
+            int zahl1 = 16;
+            int zahl2 = 32;
+
+            switch(operators)
+            {
+                case "+":
+                    Console.WriteLine(zahl1 + zahl2);
+                    break;
+                case "-":
+                    Console.WriteLine(zahl1 - zahl2);
+                    break;
+                case "*":
+                    Console.WriteLine(zahl1 * zahl2);
+                    break;
+                case "/":
+                    Console.WriteLine(zahl1 / zahl2);
+                    break;
+                default:
+                    Console.WriteLine("Ich kenne diesen Operator nicht");
+                    break;
+            }
         }
     }
 }
