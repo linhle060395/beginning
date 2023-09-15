@@ -27,16 +27,16 @@ namespace HelloWorld
             switch(operators)
             {
                 case "+":
-                    Console.WriteLine(zahl1 + zahl2);
+                    Addition(zahl1, zahl2);
                     break;
                 case "-":
-                    Console.WriteLine(zahl1 - zahl2);
+                    Substract(zahl1, zahl2);
                     break;
                 case "*":
-                    Console.WriteLine(zahl1 * zahl2);
+                    Multiply(zahl1, zahl2);
                     break;
                 case "/":
-                    Console.WriteLine(zahl1 / zahl2);
+                    Division(zahl1, zahl2);
                     break;
                 default:
                     Console.WriteLine("Ich kenne diesen Operator nicht");
@@ -45,24 +45,24 @@ namespace HelloWorld
         }
     
 
-        static void Addition(int zahl1, int zahl2)
+        static void Addition(int number1, int number2)
         {
-            Console.WriteLine(zahl1 + zahl2);
+            Console.WriteLine(number1 + number2);
         }
 
-        static void Substract(int zahl1, int zahl2)
+        static void Substract(int number1, int number2)
         {
-            Console.WriteLine(zahl1 - zahl2);
+            Console.WriteLine(number1 - number2);
         }
 
-        static void Multiply(int zahl1, int zahl2)
+        static void Multiply(int number1, int number2)
         {
-            Console.WriteLine(zahl1 * zahl2);
+            Console.WriteLine(number1 * number2);
         }
 
-        static void Division(int zahl1, int zahl2)
+        static void Division(int number1, int number2)
         {
-            Console.WriteLine(zahl1 / zahl2);
+            Console.WriteLine(number1 / number2);
         }
 
     }
