@@ -12,22 +12,14 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-           Console.WriteLine("How many texts do you want in an array?");
-           int number = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Give me the first number");
+            int number1 = Convert.ToInt16(Console.ReadLine());
 
-           string[] theArray = new string[number];
+            Console.WriteLine("Give me the second number");
+            int number2 = Convert.ToInt16(Console.ReadLine());
 
-           for(int i=0; i < number; i++)
-           {
-                string text1 = Console.ReadLine();
-                theArray[i] = text1;
-           }
-
-           foreach(string entry in theArray)
-           {
-                Console.WriteLine(entry.PadLeft(20,' '));
-           }
-           
+            int result = number1 % number2;
+                Console.WriteLine($"The calculation is {result}");
         }
     }
 }
