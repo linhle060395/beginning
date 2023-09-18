@@ -13,25 +13,21 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-           Console.WriteLine("Wie viele Zahlen möchtest du in einem Array?");
-           string eingabe = Console.ReadLine();
-           int groese = Convert.ToInt16(eingabe);
+           Console.WriteLine("Bitte geben eine Zahl");
+           int Zahl = Convert.ToInt32(Console.ReadLine());
 
-           int[] myArray = new int[groese];
-           
-           for(int position = 0; position < myArray.Length; position++)
+           //Möglichkeit 1
+           for(int i = Zahl; i >= 0 ; i--)
            {
-                string texteingeben = Console.ReadLine();
-                myArray[position] = Convert.ToInt16(texteingeben);
+                Console.WriteLine(i);
            }
-           
-           int max = myArray.Max();
-           int min = myArray.Min();
-           double average = myArray.Average();
-           
-           Console.WriteLine($"Die größte Zahl ist {max}");
-           Console.WriteLine($"Die kleinste Zahl ist {min} ");
-           Console.WriteLine($"Durschnitt ist {average}");
+
+           //Möglichkeit 2
+           while(Zahl>0)
+           {
+                Console.WriteLine(Zahl);
+                Zahl--;
+           }
         }
     }
 }
