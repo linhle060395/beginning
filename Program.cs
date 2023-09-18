@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Numerics;
@@ -12,37 +13,25 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Bitte schreiben Sie einen Text");
-            string Text = Console.ReadLine();
+           Console.WriteLine("Wie viele Zahlen möchtest du in einem Array?");
+           string eingabe = Console.ReadLine();
+           int groese = Convert.ToInt16(eingabe);
 
-            int length = Text.Length;
-            Console.WriteLine($"Die Länge des Textes ist {length}");
-
-            //Möglichkeit 1:
-            string [] splittedText = Text.Split('h');
-
-            //Möglichkeit 2a:
-            for(int i = 0; i<splittedText.Length; i++)
-            {
-                if(Text[i] == 'h')
-                {
-                    count++;
-                }
-            Console.WriteLine($"Es gibt {count} h's in Seinem Text");
-            }
-
-            //Möglichkeit 2b:
-            foreach(char c in Text)
-            {
-                if(c == 'h')
-                {
-                    count++;
-                }
-            }
-
-             //Möglichkeit 3:
-           int numberofh = Text.Count(c => c == 'h');
-           Console.WriteLine($"Es gibt {numberofh} h's in Seinem Text.");
+           int[] myArray = new int[groese];
+           
+           for(int position = 0; position < myArray.Length; position++)
+           {
+                string texteingeben = Console.ReadLine();
+                myArray[position] = Convert.ToInt16(texteingeben);
+           }
+           
+           int max = myArray.Max();
+           int min = myArray.Min();
+           double average = myArray.Average();
+           
+           Console.WriteLine($"Die größte Zahl ist {max}");
+           Console.WriteLine($"Die kleinste Zahl ist {min} ");
+           Console.WriteLine($"Durschnitt ist {average}");
         }
     }
 }
