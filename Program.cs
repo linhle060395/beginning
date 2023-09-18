@@ -15,20 +15,18 @@ namespace HelloWorld
         {
            Console.WriteLine("Bitte geben eine Zahl");
            int Zahl = Convert.ToInt32(Console.ReadLine());
+           int fib1 = 1;
+           int fib2 = 1;
+           int ergebnis = 0;
 
-           for(int i = Zahl; i >= 0 ; i-=2)
-
+           while(Zahl > (fib1 + fib2))
            {
-                Console.WriteLine(i);
+                ergebnis = fib1 + fib2;
+                Console.WriteLine($"Die Fibonacci Zahlen {fib1} + {fib2} = {ergebnis}");
+                fib1 = fib2;
+                fib2 = ergebnis;
            }
-
-           //Möglichkeit 2:
-
-           while(Zahl>0)
-           {
-                Console.WriteLine(Zahl);
-                Zahl = Zahl - 2;
-           }
+           
         }
     }
 }
