@@ -13,20 +13,16 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-           Console.WriteLine("Bitte geben eine Zahl");
-           int Zahl = Convert.ToInt32(Console.ReadLine());
-           int fib1 = 1;
-           int fib2 = 1;
-           int ergebnis = 0;
+           string text = "MissiSsiPpi";
 
-           while(Zahl > (fib1 + fib2))
-           {
-                ergebnis = fib1 + fib2;
-                Console.WriteLine($"Die Fibonacci Zahlen {fib1} + {fib2} = {ergebnis}");
-                fib1 = fib2;
-                fib2 = ergebnis;
-           }
+           int letterM = text.Count(c => c == 'M' || c == 'm');
+           int letterI = text.Count(c => c == 'I' || c == 'i');
+           int letterS = text.Count(c => c == 'S' || c == 's');
+           int letterP = text.Count(c => c == 'P' || c == 'p');
            
+            {
+            Console.Write($"There are {letterM} M, {letterI} I, {letterS} S, {letterP} P  in the text");
+            }
         }
     }
 }
