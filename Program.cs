@@ -16,17 +16,18 @@ namespace HelloWorld
            Console.WriteLine("Bitte geben eine Zahl");
            int Zahl = Convert.ToInt32(Console.ReadLine());
 
-           //Möglichkeit 1
-           for(int i = Zahl; i >= 0 ; i--)
+           for(int i = Zahl; i >= 0 ; i-=2)
+
            {
                 Console.WriteLine(i);
            }
 
-           //Möglichkeit 2
+           //Möglichkeit 2:
+
            while(Zahl>0)
            {
                 Console.WriteLine(Zahl);
-                Zahl--;
+                Zahl = Zahl - 2;
            }
         }
     }
