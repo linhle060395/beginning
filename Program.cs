@@ -13,16 +13,22 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-           string text = "MissiSsiPpi";
-
-           int letterM = text.Count(c => c == 'M' || c == 'm');
-           int letterI = text.Count(c => c == 'I' || c == 'i');
-           int letterS = text.Count(c => c == 'S' || c == 's');
-           int letterP = text.Count(c => c == 'P' || c == 'p');
+           //Der Nutzer soll eine Zahl eingeben. Diese stellen die Anzahl der Sekunden dar.
+           //Konvertiere die Zahl in die Anzahl der Tage, Stunden, Minuten und restliche Sekunde
+           //90061 ist ein Tag, eine Stunde, eine Minute, eine Sekunde.
            
-            {
-            Console.Write($"There are {letterM} M, {letterI} I, {letterS} S, {letterP} P  in the text");
-            }
+           Console.WriteLine("Gebe mir die Anzahl der Sekunden");
+           int Anzahl = Convert.ToInt32(Console.ReadLine());
+
+           int Tage = Anzahl / (60*60*24);
+           int Stunden = (Anzahl % (60 * 60 * 24)) / (60 * 60);
+           int Minuten = ((Anzahl % (60 * 60 * 24)) % (60 * 60)) / 60;
+           int Sekunden = ((Anzahl % (60 * 60 * 24)) % (60 * 60)) % 60;
+           
+           Console.WriteLine($"Tage: {Tage}");
+           Console.WriteLine($"Stunden: {Stunden}");
+           Console.WriteLine($"Minuten: {Minuten}");
+           Console.WriteLine($"Sekunden: {Sekunden}");
         }
     }
 }
