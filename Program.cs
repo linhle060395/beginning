@@ -12,14 +12,37 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Give me the first number");
-            int number1 = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Bitte schreiben Sie einen Text");
+            string Text = Console.ReadLine();
 
-            Console.WriteLine("Give me the second number");
-            int number2 = Convert.ToInt16(Console.ReadLine());
+            int length = Text.Length;
+            Console.WriteLine($"Die Länge des Textes ist {length}");
 
-            int result = number1 % number2;
-                Console.WriteLine($"The calculation is {result}");
+            //Möglichkeit 1:
+            string [] splittedText = Text.Split('h');
+
+            //Möglichkeit 2a:
+            for(int i = 0; i<splittedText.Length; i++)
+            {
+                if(Text[i] == 'h')
+                {
+                    count++;
+                }
+            Console.WriteLine($"Es gibt {count} h's in Seinem Text");
+            }
+
+            //Möglichkeit 2b:
+            foreach(char c in Text)
+            {
+                if(c == 'h')
+                {
+                    count++;
+                }
+            }
+
+             //Möglichkeit 3:
+           int numberofh = Text.Count(c => c == 'h');
+           Console.WriteLine($"Es gibt {numberofh} h's in Seinem Text.");
         }
     }
 }
