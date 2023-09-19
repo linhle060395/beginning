@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Net.NetworkInformation;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Xml.XPath;
@@ -13,22 +14,62 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-           //Der Nutzer soll eine Zahl eingeben. Diese stellen die Anzahl der Sekunden dar.
-           //Konvertiere die Zahl in die Anzahl der Tage, Stunden, Minuten und restliche Sekunde
-           //90061 ist ein Tag, eine Stunde, eine Minute, eine Sekunde.
-           
-           Console.WriteLine("Gebe mir die Anzahl der Sekunden");
-           int Anzahl = Convert.ToInt32(Console.ReadLine());
+          /*
+            // Passe die Methode "Fahren" so an, dass 
+            //- bei einer Geschwindigkeit von 0 die Methode "steht" zurück gibt: Hinweis: return
+            //- bei einer Geschwindigkeit von 1-10 "schleicht" zurück gibt
+            //- bei einer Geschwindigkeit von 11-50 "fährt langsam" zurück gibt
+            //- bei einer Geschwindigkeit von 51-100 "fährt schnell" zurück gibt
+            //- bei einer Geschwindigkeit über 100 "rast" zurück gibt.
 
-           int Tage = Anzahl / (60*60*24);
-           int Stunden = (Anzahl % (60 * 60 * 24)) / (60 * 60);
-           int Minuten = ((Anzahl % (60 * 60 * 24)) % (60 * 60)) / 60;
-           int Sekunden = ((Anzahl % (60 * 60 * 24)) % (60 * 60)) % 60;
-           
-           Console.WriteLine($"Tage: {Tage}");
-           Console.WriteLine($"Stunden: {Stunden}");
-           Console.WriteLine($"Minuten: {Minuten}");
-           Console.WriteLine($"Sekunden: {Sekunden}");
+            //Bau die Ausgabe so, dass nach jedem Aufruf folgende Texte ausgegeben werden können. 
+            //Das Auto steht.
+            //Das Auto schleicht.
+            //Das Auto fährt langsam.
+            //Das Auto fährt schnell. 
+            //Das Auto rast.
+            */
+
+            
+            Console.WriteLine("Bitte eine Geschwindigkeit geben");
+            int geschwindigkeit = Convert.ToInt16(Console.ReadLine());
+            string ausgabe = Fahren(geschwindigkeit);
+
+
+        static string Fahren(int geschwindigkeit)
+        {
+            if(geschwindigkeit == 0)
+            {
+                return "Das Auto steht";
+            }
+
+            else if(geschwindigkeit >= 1 && geschwindigkeit <= 10)
+            {
+                return "Das Auto schleicht";
+            }
+
+            else if(geschwindigkeit >= 11 && geschwindigkeit <= 50)
+            {
+                return "Das Auto fährt langsam";
+            }
+
+            else if(geschwindigkeit >= 51 && geschwindigkeit <= 100)
+            {
+                return "Das Auto fährt schnell";
+            }
+            
+            else if(geschwindigkeit > 100)
+            {
+                return "Das Auto rast";
+            }
+
+            else
+            {
+                return "Fehlernummer";
+            }
+        }
+        
+        Console.WriteLine($"{ausgabe} mit {geschwindigkeit} km/h ");
         }
     }
 }
