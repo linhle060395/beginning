@@ -18,125 +18,52 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            /*1.  Erstelle eine Liste von Integers welche 3 Elemente zum Start beinhaltet ( 5,3,7)
-            2.  Füge der Liste weitere Zahlen hinzu. Der Nutzer soll in der
-                Schleife selbst entscheiden ob er weitere hinzufügen möchte oder nicht
-                (Leere Eingabe => Abbruch des Hinzufügens)
-            3.  Gebe die Einträge der Liste in einer Schleife aus
-            4.  Füge an Position 2 die Zahl 99 hinzu und gebe die Liste aus
-            5.  Füge die Zahlen 91, 92, 93 gleichzeitig hinzu und gebe die Liste aus
-            6.  Entferne das Element an der 1. Stelle und gebe die Liste aus
-            7.  Entferne die Zahl 99 ohne zu wissen wo sie gerade steht und gebe die Liste aus
-            8.  Lösche das Letzte Element der Liste und gebe die Liste aus
-            9.  Schaue dir die Vorgeschlagenen Methoden von Listen an und probiere einige aus. (z.B. Sort, Reverse, )
-            10. Lösche alle Zahlen größer als 80 und gebe die Liste aus
+            /*Erstelle für folgende Berechnungen jeweils eine Methode
+        -   Berechnung des Umfangs von einem Kreis. Überlege welche Parameter du benötigst und welchen Typ als Rückgabewert gebraucht wird.
+        -   Berechne den Umfang eines Quadrats.
+        -   Berechne de Umfang eines Rechtecks => Was ist der Unterschied?
+        -   Berechne das Volumen eines Würfels
+        -   Berechne das Volumen eines Quaders.
             */
+        // Berechnung des Umfangs von einem Kreis. Überlege welche Parameter du benötigst und welchen Typ als Rückgabewert gebraucht wird.
+        Console.WriteLine("Gebe mir den Radius");
+        int Radius = Convert.ToInt16(Console.ReadLine());
+        double Umfang = 2 * Math.PI * Radius;
+        Console.WriteLine($"Der Umfang eines Kreises ist {Umfang}");
+        
 
-            // 1. Erstelle eine Liste von Integers welche 3 Elemente zum Start beinhaltet ( 5,3,7)
-            List<int> myIntegers = new List<int> ();
+        // Berechne den Umfang eines Quadrats.
+        Console.WriteLine("Gebe mir die Kantenlänge des Quadrats");
+        int Kante = Convert.ToInt16(Console.ReadLine());
+        int Umfang2 = 4 * Kante;
+        Console.WriteLine($"Der Umfang eines Quadrats ist {Umfang2}");
 
-            Console.WriteLine("Gebe mir eine Liste den Zahlen mit 3,5,7");
-            string Zahlen = Console.ReadLine();
-            string[] numbers = Zahlen.Split(' ');
-            foreach(string n in numbers)
-            {
-                myIntegers.Add(Convert.ToInt32(n));
 
-            }
-            
-            // 2. Füge der Liste weitere Zahlen hinzu. Der Nutzer soll in der Schleife selbst entscheiden ob er weitere hinzufügen möchte oder nicht
-            // 3. Gebe die Einträge der Liste in einer Schleife aus
+        // Berechne den Umfang eines Rechtecks
+        Console.WriteLine("Gebe mir die Länge des Rechtecks");
+        int Länge = Convert.ToInt16(Console.ReadLine());
+        Console.WriteLine("Gebe mir die Breite des Rechtecks");
+        int Breite = Convert.ToInt16(Console.ReadLine());
+        int Umfang3 = 2 * (Länge + Breite);
+        Console.WriteLine($"Der Umfang eines Rechtecks ist {Umfang3}");
 
-            Console.WriteLine("Möchten Sie zusätzliche Zahlen hinzufügen? (Ja or Nein)");
-            string eingabe = Console.ReadLine();
 
-             if (eingabe == "Nein")
-            {
-                Console.WriteLine($"Die Liste der Nummern lautet {Zahlen}");
-                
-                foreach (int number in myIntegers)
-                {
-                    Console.WriteLine(number);
-                }
-            }
-            else if (eingabe == "Ja")
-            {
-                
-                Console.WriteLine("Gebe mir eine zusaätzliche Zahl");
-                int input = Convert.ToInt32(Console.ReadLine());
-                
-                myIntegers.Add(input);
-                Console.WriteLine($"Die neue Liste ist");
-                foreach( int number in myIntegers)
-                {
-                    Console.WriteLine(number);
-                }
-            }
+        // Berechne das Volumen eines Würfels
+        Console.WriteLine("Gebe mir die Kantenlänge des Quadrats");
+        int Kante2 = Convert.ToInt16(Console.ReadLine());
+        double Volumen = Math.Pow (Kante2, 3);
+        Console.WriteLine($"Das Volumen eines Würfels ist {Volumen}");
 
-            // 4. Füge an Position 2 die Zahl 99 hinzu und gebe die Liste aus
-            myIntegers.Insert(1,99);
-            Console.WriteLine($"Die neue Liste ist:");
-            foreach( int number in myIntegers)
-            {
-                Console.WriteLine(number);
-            }
-            
-            // 5.  Füge die Zahlen 91, 92, 93 gleichzeitig hinzu und gebe die Liste aus
-           myIntegers.AddRange(new int [] {91, 92, 93});
-           Console.WriteLine($"Die neue Liste ist:");
-            foreach( int number in myIntegers)
-            {
-                Console.WriteLine(number);
-            }
 
-            // 6.  Entferne das Element an der 1. Stelle und gebe die Liste aus
-            myIntegers.RemoveAt(0);
-            Console.WriteLine($"Die neue Liste ist:");
-            foreach( int number in myIntegers)
-            {
-                Console.WriteLine(number);
-            }
-
-            // 7.  Entferne die Zahl 99 ohne zu wissen wo sie gerade steht und gebe die Liste aus
-            myIntegers.Remove(99);
-            Console.WriteLine($"Die neue Liste ist:");
-            foreach( int number in myIntegers)
-            {
-                Console.WriteLine(number);
-            }
-
-           // 8.  Lösche das Letzte Element der Liste und gebe die Liste aus
-           myIntegers.RemoveAt(myIntegers.Count - 1);
-           Console.WriteLine($"Die neue Liste ist:");
-            foreach( int number in myIntegers)
-            {
-                Console.WriteLine(number);
-            }
-
-            //  9.  Schaue dir die Vorgeschlagenen Methoden von Listen an und probiere einige aus. (z.B. Sort, Reverse, )
-            myIntegers.Reverse();
-            Console.WriteLine($"Die neue Liste ist:");
-            foreach( int number in myIntegers)
-            {
-                Console.WriteLine(number);
-            }
-
-            // 10. Lösche alle Zahlen größer als 80 und gebe die Liste aus
-            //myIntegers.RemoveAll(z => z > 80);
-
-            for(int i = 0; i<myIntegers.Count; i++)
-            {
-                if(myIntegers[i]>80)
-                {
-                    myIntegers.RemoveAt(i);
-                    i--;
-                }
-            }
-            Console.WriteLine($"Die neue Liste ist:");
-            foreach( int number in myIntegers)
-            {
-                Console.WriteLine(number);
-            }
+        // Berechne das Volumen eines Quaders
+        Console.WriteLine("Gebe mir die Länge des Rechtecks");
+        int Länge2 = Convert.ToInt16(Console.ReadLine());
+        Console.WriteLine("Gebe mir die Breite des Rechtecks");
+        int Breite2 = Convert.ToInt16(Console.ReadLine());
+        Console.WriteLine("Gebe mir die Höhe des Rechtecks");
+        int Höhe = Convert.ToInt16(Console.ReadLine());
+        double Volumen2 = Länge2 * Breite2 * Höhe;
+        Console.WriteLine($"Das Volumen eines Quaders ist {Volumen2}");
         }
     }
 }
