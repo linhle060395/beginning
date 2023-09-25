@@ -18,52 +18,62 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            /*Erstelle für folgende Berechnungen jeweils eine Methode
-        -   Berechnung des Umfangs von einem Kreis. Überlege welche Parameter du benötigst und welchen Typ als Rückgabewert gebraucht wird.
-        -   Berechne den Umfang eines Quadrats.
-        -   Berechne de Umfang eines Rechtecks => Was ist der Unterschied?
-        -   Berechne das Volumen eines Würfels
-        -   Berechne das Volumen eines Quaders.
-            */
-        // Berechnung des Umfangs von einem Kreis. Überlege welche Parameter du benötigst und welchen Typ als Rückgabewert gebraucht wird.
-        Console.WriteLine("Gebe mir den Radius");
-        int Radius = Convert.ToInt16(Console.ReadLine());
-        double Umfang = 2 * Math.PI * Radius;
-        Console.WriteLine($"Der Umfang eines Kreises ist {Umfang}");
+           /* 
+           1. Kopiere aus T:\WKH_EXC\Trash\cbec\ die Datei data.csv auf deine Festplatte C:\..... (Freie Wahl möglich)
+           2. Kopiere die Datei unter einem anderen Namen
+           3. Lösche die kopierte Datei wieder
+           4. Kopiere die Datei in ein Variables Verzeichnis, welches der Nutzer selbst setzen kann
+           5. Probiere eine Datei einzulesen, welche nicht existiert. Behalte die Lösung im Hinterkopf wenn du zukünftig Dateien einliest, damit du hier keinen Fehler bekommst!!!
+           6. Lese Datei mittels einem C#- Programm ein
+           7. Teile die Einträge am Separator und gebe die ersten 10 Zeilen mit einem Tabulator separiert aus.
+           8. Gebe nur die Einträge aus, welche vom Alter jünger als 20 und männlich sind
+           9. Speichere diese in einer neuen CSV-Datei mit dem Namen „JungeHüpfer.csv“
+           10. Erstelle eine Schleife welche die Einträge nach Alter separieren. (Gewichte_18.csv, Gewichte_19.csv ……. Bis  Alter 100) 
+           */
+
+           // 1. Kopiere aus T:\WKH_EXC\Trash\cbec\ die Datei data.csv auf deine Festplatte C:\..... (Freie Wahl möglich)
+           string InitialPath = @"T:\WKH_EXC\Trash\cbec\die Datei data.csv";
+           string NewPath = @"C:\TraineeOffice\beginning\die Datei data.csv";
+
+           try
+        {
+            File.Copy(InitialPath, NewPath, true);
+            Console.WriteLine("The file was copied successfully.");
+        }
+            catch (Exception ex)
+        {
+            Console.WriteLine("The file cannot be copied. " + ex.Message);
+
+        }
+
+
+        // 2. Kopiere die Datei unter einem anderen Namen
+        string InitialPath2 = @"C:\TraineeOffice\beginning\die Datei data.csv";
+        string NewPath2 = @"C:\TraineeOffice\beginning\die neue Datei data.csv";
+
+        try
+        {
+            File.Copy(InitialPath2, NewPath2, true);
+            Console.WriteLine("The file name was changed successfully.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("The file name cannot be changed. " + ex.Message);
+        }
+
+
+        // 3. Lösche die kopierte Datei wieder
+        try
+        {
+            File.Delete(NewPath2);
+            Console.WriteLine("The file was deleted successfully.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("The file cannot be deleted. " + ex.Message);
+        }
+
         
-
-        // Berechne den Umfang eines Quadrats.
-        Console.WriteLine("Gebe mir die Kantenlänge des Quadrats");
-        int Kante = Convert.ToInt16(Console.ReadLine());
-        int Umfang2 = 4 * Kante;
-        Console.WriteLine($"Der Umfang eines Quadrats ist {Umfang2}");
-
-
-        // Berechne den Umfang eines Rechtecks
-        Console.WriteLine("Gebe mir die Länge des Rechtecks");
-        int Länge = Convert.ToInt16(Console.ReadLine());
-        Console.WriteLine("Gebe mir die Breite des Rechtecks");
-        int Breite = Convert.ToInt16(Console.ReadLine());
-        int Umfang3 = 2 * (Länge + Breite);
-        Console.WriteLine($"Der Umfang eines Rechtecks ist {Umfang3}");
-
-
-        // Berechne das Volumen eines Würfels
-        Console.WriteLine("Gebe mir die Kantenlänge des Quadrats");
-        int Kante2 = Convert.ToInt16(Console.ReadLine());
-        double Volumen = Math.Pow (Kante2, 3);
-        Console.WriteLine($"Das Volumen eines Würfels ist {Volumen}");
-
-
-        // Berechne das Volumen eines Quaders
-        Console.WriteLine("Gebe mir die Länge des Rechtecks");
-        int Länge2 = Convert.ToInt16(Console.ReadLine());
-        Console.WriteLine("Gebe mir die Breite des Rechtecks");
-        int Breite2 = Convert.ToInt16(Console.ReadLine());
-        Console.WriteLine("Gebe mir die Höhe des Rechtecks");
-        int Höhe = Convert.ToInt16(Console.ReadLine());
-        double Volumen2 = Länge2 * Breite2 * Höhe;
-        Console.WriteLine($"Das Volumen eines Quaders ist {Volumen2}");
         }
     }
 }
