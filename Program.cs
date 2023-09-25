@@ -32,8 +32,10 @@ namespace HelloWorld
            */
 
            // 1. Kopiere aus T:\WKH_EXC\Trash\cbec\ die Datei data.csv auf deine Festplatte C:\..... (Freie Wahl möglich)
-           string InitialPath = @"T:\WKH_EXC\Trash\cbec\die Datei data.csv";
-           string NewPath = @"C:\TraineeOffice\beginning\die Datei data.csv";
+           string InitialPath = @"T:/WKH_EXC/Trash/cbec/data.csv";
+           string NewPath = @"C:/TraineeOffice/beginning/data.csv";
+
+           
 
            try
         {
